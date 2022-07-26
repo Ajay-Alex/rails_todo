@@ -1,0 +1,8 @@
+<h2>Add ToDo</h2>
+<%=form_for @todo do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :Done? %>
+  <%= f.text_field :done %><br>
+  <%= f.submit %>
+<% end %>

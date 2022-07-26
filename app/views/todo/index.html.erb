@@ -1,0 +1,6 @@
+<%= link_to 'Create Todo', new_todo_path %>
+<% @todos.each do |todo| %>
+  <h2><%= link_to todo.name, todos_path(todo) %></h2>
+  <p><%= todo.name %></p>
+  <p>Done: <%= todo.done %></p>
+<% end %>

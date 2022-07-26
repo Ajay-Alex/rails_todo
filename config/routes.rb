@@ -2,7 +2,19 @@ Rails.application.routes.draw do
 
   root 'todo#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  get '/'=>'todo#index'
+
+  get 'todos'=> 'todo#show_all',as: 'todos'
+
+  get 'todos/:id'=>'todo#show',as: 'todo', id: /\d+/
+
+  post 'todos/new'=> 'todo#create',as: 'new_todo'
+
+  put 'todos/:id'=> 'todo#update', id: /\d+/
+
+  delete 'todos/:id'=>'todo#delete', id: /\d+/
+
+   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
